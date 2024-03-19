@@ -1,5 +1,8 @@
 package presentation;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,6 +15,8 @@ package presentation;
  */
 public class JFrameRegisterAppointment extends javax.swing.JFrame {
 
+    private JDateChooser dateChooser;
+    
     /**
      * Creates new form ConfirmaciondeCita
      */
@@ -143,6 +148,31 @@ public class JFrameRegisterAppointment extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void crearDateChooser() {
+        
+        dateChooser = new JDateChooser();
+        dateChooser.setBounds(171, 143, 142, 26);
+        add(dateChooser);
+        
+    }
+
+    public void limitarCalendario() {
+        
+        Calendar calendar = Calendar.getInstance();
+        Date fechaActual = calendar.getTime();
+
+        calendar.add(Calendar.YEAR, -120);
+        Date fechaMinima = calendar.getTime();
+
+        calendar.setTime(fechaActual);
+        calendar.add(Calendar.YEAR, -18);
+        Date fechaMaxima = calendar.getTime();
+
+        dateChooser.setSelectableDateRange(fechaMinima, fechaMaxima);
+        
+    }
+    
+    
 //    /**
 //     * @param args the command line arguments
 //     */
