@@ -11,4 +11,9 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>softwaredesign.clinicaadministration.ClinicaAdministration</exec.mainClass>
     </properties>
+    <dependency>
+    <groupId>com.toedter</groupId>
+    <artifactId>jcalendar</artifactId>
+    <version>1.4</version>
+    </dependency>
 </project>
